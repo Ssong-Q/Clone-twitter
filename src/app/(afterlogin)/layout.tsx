@@ -39,7 +39,7 @@ function AfterLoginLayout({ children }: Props) {
       </header>
       <div className="flex flex-col items-start grow h-dvh">
         <div className="flex justify-between w-990pxr h-full">
-          <main className="w-600pxr bg-green">{children}</main>
+          <main className="w-600pxr">{children}</main>
           <section className="w-350pxr h-full">
             <div style={{ marginBottom: 60, width: 'inherit' }}>
               <form className="fixed top-6pxr bottom-12pxr flex items-center gap-8pxr w-350pxr h-42pxr rounded-btn bg-[#eff3f4]">

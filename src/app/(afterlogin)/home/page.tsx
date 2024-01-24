@@ -1,5 +1,20 @@
-function Home() {
-  return <div>홈페이지</div>;
-}
+import PostForm from './_components/PostForm';
+import Tab from './_components/Tab';
+import TabProvider from './_components/TabProvider';
 
-export default Home;
+export default function Home() {
+  return (
+    <main>
+      <TabProvider>
+        <Tab />
+        {/* <PostForm /> */}
+        {/* <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post /> */}
+      </TabProvider>
+    </main>
+  );
+}
