@@ -104,4 +104,9 @@
   .actionButton {
     @apply w-full h-50pxr rounded-modalBtn bg-[#0f1419] text-white text-17pxr cursor-pointer border-none disabled:opacity-50 hover:bg-[#272c30];
   }
+
+  /* NavMenu */
+  .navPill {
+    @apply inline-flex h-50pxr p-12pxr items-center hover:bg-[#0f14191a] hover:rounded-[29px];
+  }
 }

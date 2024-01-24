@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import ZLogo from '../../../public/zlogo.png';
+import NavMenu from './_components/NavMenu';
 
 interface Props {
   children: ReactNode;
@@ -12,13 +13,18 @@ function AfterLoginLayout({ children }: Props) {
     <div className="flex items-stretch bg-white">
       <header className="flex flex-col items-end grow">
         <section className="w-275pxr h-dvh bg-red">
-          <div className="fixed w-275pxr h-full bg-blue">
-            <Link className="" href={'/home'}>
+          <div className="fixed w-275pxr h-dvh flex flex-col bg-blue">
+            <Link className="inline-block h-56pxr mt-2pxr" href={'/home'}>
               <div className="w-50pxr h-50pxr rounded-[50%] flex justify-center items-center hover:bg-[#0f14191a]">
-                <Image src={ZLogo} alt="z.com로고" />
+                <Image src={ZLogo} alt="z.com로고" width={40} height={40} />
               </div>
             </Link>
           </div>
+          <nav>
+            <ul>
+              <NavMenu />
+            </ul>
+          </nav>
         </section>
       </header>
       <div className="flex flex-col items-start grow h-dvh">
