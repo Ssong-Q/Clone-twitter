@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ReactNode } from 'react';
 import ZLogo from '../../../public/zlogo.png';
 import NavMenu from './_components/NavMenu';
+import LogoutButton from './_components/LogOutButton';
 
 interface Props {
   children: ReactNode;
@@ -12,19 +13,26 @@ function AfterLoginLayout({ children }: Props) {
   return (
     <div className="flex items-stretch bg-white">
       <header className="flex flex-col items-end grow">
-        <section className="w-275pxr h-dvh bg-red">
-          <div className="fixed w-275pxr h-dvh flex flex-col bg-blue">
+        <section className="w-275pxr h-dvh">
+          <div className="fixed w-275pxr h-dvh flex flex-col">
             <Link className="inline-block h-56pxr mt-2pxr" href={'/home'}>
               <div className="w-50pxr h-50pxr rounded-[50%] flex justify-center items-center hover:bg-[#0f14191a]">
                 <Image src={ZLogo} alt="z.com로고" width={40} height={40} />
               </div>
             </Link>
+            <nav className="flex-1">
+              <ul>
+                <NavMenu />
+              </ul>
+              <Link
+                href={'/compose/tweet'}
+                className="my-16pxr flex justify-center items-center h-52pxr shadow-postButton bg-[#1d9bf0] w-234pxr border-none text-white font-[700] text-17pxr rounded-[26px] hover:bg-[#1a8cd8]"
+              >
+                게시하기
+              </Link>
+            </nav>
+            <LogoutButton />
           </div>
-          <nav>
-            <ul>
-              <NavMenu />
-            </ul>
-          </nav>
         </section>
       </header>
       <div className="flex flex-col items-start grow h-dvh">
@@ -42,7 +50,6 @@ function AfterLoginLayout({ children }: Props) {
           </section>
         </div>
       </div>
-      {children}
     </div>
   );
 }
