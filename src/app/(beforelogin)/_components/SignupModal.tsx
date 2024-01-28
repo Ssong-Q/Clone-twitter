@@ -58,7 +58,7 @@ export default function SignupModal() {
       <div className="modalBackground">
         <div className="bg-WHITE relative top-[5%] max-w-4/5vw min-w-600pxr rounded-modal flex flex-col h-550pxr">
           <div className="modalHeader">
-            <button className="closeButton" onClick={onClickClose}>
+            <button className="closeButton" onClick={onClickClose} title="Close">
               <svg
                 width={24}
                 viewBox="0 0 24 24"
