@@ -1,9 +1,10 @@
-import style from './post.module.css';
-import Link from 'next/link';
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
-import 'dayjs/locale/ko';
 import ActionButtons from '@/app/(afterlogin)/_components/ActionButtons';
+import dayjs from 'dayjs';
+import 'dayjs/locale/ko'; // 한글 plugin
+import relativeTime from 'dayjs/plugin/relativeTime'; // plugin 기반
+import Image from 'next/image';
+import Link from 'next/link';
+import style from './post.module.css';
 
 dayjs.locale('ko');
 dayjs.extend(relativeTime);
@@ -24,7 +25,13 @@ export default function Post() {
       <div className={style.postWrapper}>
         <div className={style.postUserSection}>
           <Link href={`/${target.User.id}`} className={style.postUserImage}>
-            <img src={target.User.image} alt={target.User.nickname} />
+            <Image
+              src={target.User.image}
+              alt={target.User.nickname}
+              width={40}
+              height={40}
+              style={{ borderRadius: '20px' }}
+            />
             <div className={style.postShade} />
           </Link>
         </div>
